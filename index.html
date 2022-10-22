@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo flex align-center">Blogin<span class="logo-dot">.</span></div>
+            <ul class="nav">
+                <!-- add link to li? -->
+                <li><a href="#">Journal</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <main class="main-section">
+        <div class="card">
+            <img class="card-img" src="./styles/imgs/001.jpg" alt="">
+            <div class="card-content">
+                <h2>Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <div style="display:flex; flex-direction:column">
+                    <button onmouseover="display('.arrow-1')" onmouseout="hide('.arrow-1')">Continue Reading<img
+                            class="arrow arrow-1 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="./styles/imgs/002.jpg" alt="">
+            <div class="card-content">
+                <h2>Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <button onmouseover="display('.arrow-2')" onmouseout="hide('.arrow-2')">Continue Reading<img
+                        class="arrow arrow-2 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img" src="./styles/imgs/001.jpg" alt=""></img>
+            <div class="card-content">
+                <h2>Duis aute irure dolor in
+                    henderit in voluptate.</h2>
+                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commo
+                    doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <br><br>
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur...
+                </p>
+                <button onmouseover="display('.arrow-3')" onmouseout="hide('.arrow-3')">Continue Reading<img
+                        class="arrow arrow-3 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+
+
+            </div>
+        </div>
+        <div class="btns-paging-container">
+            <a class="btn-prev btn-paging"><img src="./styles/imgs/arrow-left.jpg" alt=""> previous</a>
+            <a class="btn-next btn-paging">next <img src="./styles/imgs/arrow-right.jpg" alt=""></a>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="logo">Blogin<span class="logo-dot">.</span></div>
+        <div class="copyrights-container">
+            <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at
+                <a href="Pixelhint.com">Pixelhint.com</a>
+            </p>
+            <div class="social-btns-container">
+                <button class="btn-social facebook-logo"><img src="./styles/imgs/facebook-logo.jpg" alt=""></button>
+                <button class="btn-social twitter-logo"><img src="./styles/imgs/twitter-logo.jpg" alt=""></button>
+                <button class="btn-social be-logo"><img src="./styles/imgs/be-logo.jpg" alt=""></button>
+                <button class="btn-social basketball-logo"><img src="./styles/imgs/basketball-logo.jpg" alt=""></button>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function display(el) {
+            document.querySelector(el).classList.remove('hide')
+        }
+        function hide(el) {
+            document.querySelector(el).classList.add('hide')
+        }
+    </script>
+</body>
+
+</html>

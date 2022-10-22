@@ -1,0 +1,307 @@
+@font-face {
+    font-family: Eurofurence;
+    src: url(../fonts/eurof55.ttf);
+}
+
+@font-face {
+    font-family: lato;
+    src: url(../fonts/lato/Lato-Regular.ttf);
+}
+
+:root {
+    --light-green: #58c93a;
+    --l: 1060px;
+    --m: 860px;
+    --s: 600px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: lato;
+    letter-spacing: 0.39px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+
+}
+
+body>*:not(header):not(footer) {
+    max-width: 980px;
+}
+
+p {
+    margin: 0;
+    color: #606060;
+}
+
+a {
+    text-decoration-line: none;
+    cursor: pointer;
+
+}
+
+button {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.header {
+    width: 100%;
+    background-color: #292929;
+    color: white;
+    font-size: 1rem;
+    /* height: 8.125rem; */
+    box-shadow: inset 0 -6px 0 #1e1e1e;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 980px;
+    height: 100%;
+
+}
+
+.logo {
+    font-family: Eurofurence;
+    font-size: 2.5rem;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+
+}
+
+.logo-dot {
+    color: var(--light-green);
+}
+
+.nav {
+    display: flex;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav li {
+    padding: 2.9rem 43px;
+    line-height: 0;
+    box-shadow: -1px 0 0 #1d1d1d;
+    cursor: pointer;
+}
+
+li:last-child {
+    box-shadow: -1px 0 0 #1d1d1d, inset -1px 0 0 #1d1d1d;
+}
+
+li a {
+    color: white;
+    height: 11px;
+}
+
+li:hover {
+    box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px 0 var(--light-green);
+}
+
+li:hover>* {
+    color: var(--light-green);
+
+}
+
+.main-section {
+    padding-inline: 100px;
+    padding-top: 80px;
+    border-left: 1px solid #e1e0e0;
+    border-right: 1px solid #e1e0e0;
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 80px;
+    gap: 43px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.card h2 {
+    font-size: 1.75em;
+    margin: 0;
+    text-transform: uppercase;
+    /* CR: how do i align h2 and image properly? */
+    margin-block: -6px 0px;
+    color: #4f4e4e;
+}
+
+.card p {
+    line-height: 1.25rem;
+}
+
+.card-img {
+    aspect-ratio: 47/30;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.card button {
+    width: 186px;
+    height: 40px;
+    border: 2px solid #c2c2c2;
+    color: #c2c2c2;
+    background-color: #ffffff;
+    border-radius: 1.25rem;
+    letter-spacing: 0.48px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 20px;
+}
+
+.card button:hover {
+    width: 210px;
+    color: var(--light-green);
+    border-color: var(--light-green);
+    padding-right: 5px;
+}
+
+.card-content img {
+    margin-left: 10px;
+    width: 15px;
+    height: 7px;
+}
+
+.btns-paging-container {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 1.875rem;
+    padding-block: 2.34375rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-block: 1.47915625rem;
+    color: #818181;
+    border-top: 1px solid #e1e0e0;
+}
+
+.btns-paging-container a {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    letter-spacing: 0.05625rem;
+}
+
+.btn-paging:hover {
+    color: var(--light-green);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding-block: 5rem;
+    background-color: #f8f8f8;
+    font-weight: 700;
+    box-shadow: inset 0 1px 0 #e1e0e0;
+
+}
+
+footer .logo {
+    margin-bottom: 2rem;
+}
+
+.copyrights-container p {
+    color: #a6a6a6;
+    margin-bottom: 2.375rem;
+    line-height: 1.25rem;
+
+}
+
+.copyrights-container p a {
+    color: #939292;
+    font-weight: 700;
+}
+
+.social-btns-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.btn-social {
+    width: 40px;
+    height: 40px;
+    background-color: #e5e5e5;
+    border: none;
+}
+
+.facebook-logo:hover {
+    background-color: #516fad;
+}
+
+.twitter-logo:hover {
+    background-color: #1DA1F2;
+}
+
+.be-logo:hover {
+    background-color: #6e4be7;
+}
+
+.basketball-logo:hover {
+    background-color: #c3734e;
+}
+
+/* small */
+
+/* medium */
+/* img isnt dynamic, i dont understand how to do it. */
+@media (min-width: 900px) {
+    .main-section {
+        padding: 80px 0 0 0;
+    }
+
+    .card {
+        flex-direction: row;
+        gap: 43px;
+        box-shadow: none;
+    }
+
+    .card-img {
+        max-width: 400px;
+        height: auto;
+    }
+
+}
+
+/* large */
+@media (min-width: 1100px) {
+    .nav li {
+        padding: 3.9rem 43px;
+    }
+
+    .card-img {
+        max-width: 468px;
+        height: 307px;
+    }
+
+}

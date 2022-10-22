@@ -30,10 +30,10 @@
             </ul>
 
         </div>
-
+        
     </header>
     <main class="main-section" >
-        <div class="main-screen full" onclick="toggleModal()"></div>
+        <div class="main-screen full" onclick="toggleEls()"></div>
         <div class="main-modal hide">
             <h2>Join us to get access to the latest stories!</h2>
             <div>
@@ -140,7 +140,7 @@
         }
 
         function toggleModal() {
-            if ( document.body.classList.contains('menu-open')) return;
+            // if ( document.body.classList.contains('menu-open')) return;
             
             document.querySelector('.main-modal').classList.toggle('hide')
             document.body.classList.toggle('open-modal');
@@ -162,6 +162,10 @@
                 document.querySelector('.journal-li').classList.toggle('no-padding');
         }
 
+        function toggleEls(){
+            if( document.body.classList.contains('menu-open')) return toggleMenu()
+            toggleModal()
+        }
     </script>
 </body>
 

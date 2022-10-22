@@ -228,6 +228,8 @@ li:hover>* {
 
 .card-img {
     aspect-ratio: 47/30;
+    width: 100%;
+
 }
 
 .card-content {

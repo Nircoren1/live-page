@@ -171,7 +171,11 @@ button:hover {
     box-shadow: 0px 2px 5px 0px black;
     transform: translateY(-100%);
     /* menu shows when screen size is shrinked */
+<<<<<<< HEAD
 
+=======
+    transition: 0.5s ease-out;
+>>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
     z-index: -1;
 }
 
@@ -464,7 +468,11 @@ body.menu-open .main-screen {
     }
 
     li:hover {
+<<<<<<< HEAD
         box-shadow: inset 0 -6px 0 var(--light-green);
+=======
+        box-shadow: -1px 0 0 #1d1d1d ,inset 0 -6px 0 var(--light-green);
+>>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
         border-bottom: none;
     }
 
@@ -478,10 +486,16 @@ body.menu-open .main-screen {
     .card-img {
         max-width: 400px;
         height: auto;
+<<<<<<< HEAD
 
     }
 
   
+=======
+        
+    }
+ 
+>>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
 }
 
 /* large */

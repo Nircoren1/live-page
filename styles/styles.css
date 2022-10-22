@@ -80,6 +80,7 @@ button:hover {
 }
 
 .main-modal {
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -87,7 +88,6 @@ button:hover {
     inset: 0 0 0 0;
     padding: 20px;
     gap: 20px;
-    position: fixed;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
@@ -210,9 +210,13 @@ li:hover> a {
 .drop-down >*{
     padding-inline-start: 6.25rem;
 }
-.drop-down >*{
+.drop-down >*:not(:last-child){
     box-shadow: none;
-    border-bottom: 1px solid white;
+    border-bottom: 1px solid #a7a7a7;
+}
+
+.nav .journal-li{
+    /* padding-bottom: 0; */
 }
 
 .main-section {
@@ -224,7 +228,8 @@ li:hover> a {
 }
 
 /* test */
-.no-margin{
+.no-padding{
+    /* how should i do it witout important? */
     padding-bottom:0 !important;
 }
 
@@ -364,6 +369,12 @@ footer .logo {
     background-color: #c3734e;
 }
 
+/* body.menu-open .main-screen {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+} */
+
 /* small */
 
 /* medium */
@@ -373,13 +384,7 @@ footer .logo {
         padding: 80px 0 0 0;
     }
 
-    body.menu-open .main-screen {
-        cursor: auto;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    body.open-modal .main-screen {
+    body.open-modal .main-screen{
         cursor: pointer;
         opacity: 1;
         pointer-events: auto;
@@ -446,8 +451,10 @@ footer .logo {
 
     }
 
-    .drop-down li{
-        box-shadow: inset 0 -1px 0 #1e1e1e;
+    .drop-down >*:hover{
+        box-shadow:inset 0 -6px 0 var(--light-green);
+        border-bottom: 1px solid transparent;
+        
     }
 
     .header-log {

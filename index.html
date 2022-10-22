@@ -15,7 +15,7 @@
             <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
             <button class="btn-hamburger" onclick="toggleMenu()"><img src="./styles/imgs/hamburger.png" alt=""></button>
             <ul class="nav">
-                <li class="journal-li" onclick="toggleMenuMobile()">
+                <li class="journal-li" onclick="toggleDropDownMobile()">
                     <a href="#">Journal <span style="margin-left:5px">∨</span></a>
                     <ul class="drop-down hide">
                         <li><a href="#">October 2016</a></li>
@@ -32,7 +32,7 @@
         </div>
 
     </header>
-    <main class="main-section">
+    <main class="main-section" >
         <div class="main-screen full" onclick="toggleModal()"></div>
         <div class="main-modal hide">
             <h2>Join us to get access to the latest stories!</h2>
@@ -120,27 +120,28 @@
 
     <script>
         function display(el) {
-            document.querySelector(el).classList.remove('hide')
+            document.querySelector(el).classList.remove('hide');
         }
         function hide(el) {
-            document.querySelector(el).classList.add('hide')
+            document.querySelector(el).classList.add('hide');
         }
 
         function toggleMenu() {
-            const classList = document.body.classList
-            const img = document.querySelector('.btn-hamburger img')
+            const classList = document.body.classList;
+            const img = document.querySelector('.btn-hamburger img');
             classList.toggle('menu-open');
             if (classList.contains('menu-open')) {
                 img.src = './styles/imgs/x-icon.png';
             } else {
                 img.src = './styles/imgs/hamburger.png';
             }
+            document.querySelector('.drop-down').classList.add('hide');
+            document.querySelector('.journal-li').classList.remove('no-padding')
         }
 
         function toggleModal() {
-            if (document.body.contains('.menu-open')) {
-                return
-            }
+            if ( document.body.classList.contains('menu-open')) return;
+            
             document.querySelector('.main-modal').classList.toggle('hide')
             document.body.classList.toggle('open-modal');
         }
@@ -148,19 +149,18 @@
         function toggleDropdown() {
             document.querySelector('.drop-down').classList.toggle('hide');
         }
-
-        document.querySelector('.journal-li').addEventListener('mouseenter', toggleDropdown);
-        document.querySelector('.journal-li').addEventListener('mouseleave', toggleDropdown);
-
-        function toggleMenuMobile() {
-            if (window.innerWidth > 900) return;
-                toggleDropdown()
-                // document.querySelector('.journal-li').classList.toggle('no-margin')
+        function toggleMenuHover(){
+            if (window.innerWidth < 900) return;
+            toggleDropdown();
         }
+        document.querySelector('.journal-li').addEventListener('mouseenter', toggleMenuHover);
+        document.querySelector('.journal-li').addEventListener('mouseleave', toggleMenuHover);
 
-        // .no-margin
-
-
+        function toggleDropDownMobile() {
+            if (window.innerWidth > 900) return;
+                toggleDropdown();
+                document.querySelector('.journal-li').classList.toggle('no-padding');
+        }
 
     </script>
 </body>

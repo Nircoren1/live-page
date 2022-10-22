@@ -12,10 +12,18 @@
 <body>
     <header class="header">
         <div class="header-content">
-                <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
-                <button class="btn-hamburger" onclick="toggleMenu()"><img src="./styles/imgs/hamburger.png" alt=""></button>
+            <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
+            <button class="btn-hamburger" onclick="toggleMenu()"><img src="./styles/imgs/hamburger.png" alt=""></button>
             <ul class="nav">
-                <li><a href="#">Journal</a></li>
+                <li class="journal-li" onclick="toggleMenuMobile()">
+                    <a href="#">Journal <span style="margin-left:5px">∨</span></a>
+                    <ul class="drop-down hide">
+                        <li><a href="#">October 2016</a></li>
+                        <li><a href="#">January 2017</a></li>
+                        <li><a href="#">April 2017</a></li>
+                        <li><a href="#">July 2017</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Contact</a></li>
@@ -25,7 +33,16 @@
 
     </header>
     <main class="main-section">
-        <div class="main-screen full" onclick="toggleMenu()"></div>
+        <div class="main-screen full" onclick="toggleModal()"></div>
+        <div class="main-modal hide">
+            <h2>Join us to get access to the latest stories!</h2>
+            <div>
+                <input type="text">
+                <button class="btn-submit">Submit</button>
+            </div>
+            <button onclick="toggleModal()" class="btn-close-modal">close</button>
+
+        </div>
         <div class="card">
             <img class="card-img" src="./styles/imgs/001.jpg" alt="">
             <div class="card-content">
@@ -38,8 +55,9 @@
                     pariatur...
                 </p>
                 <div style="display:flex; flex-direction:column">
-                    <button onmouseover="display('.arrow-1')" onmouseout="hide('.arrow-1')">Continue Reading<img
-                            class="arrow arrow-1 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+                    <button onclick="toggleModal()" onmouseover="display('.arrow-1')"
+                        onmouseout="hide('.arrow-1')">Continue Reading<img class="arrow arrow-1 hide"
+                            src="./styles/imgs/green-arrow-right.jpg" alt="">
                     </button>
                 </div>
             </div>
@@ -55,8 +73,8 @@
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur...
                 </p>
-                <button onmouseover="display('.arrow-2')" onmouseout="hide('.arrow-2')">Continue Reading<img
-                        class="arrow arrow-2 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+                <button onclick="toggleModal()" onmouseover="display('.arrow-2')" onmouseout="hide('.arrow-2')">Continue
+                    Reading<img class="arrow arrow-2 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
             </div>
         </div>
         <div class="card">
@@ -70,8 +88,8 @@
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur...
                 </p>
-                <button onmouseover="display('.arrow-3')" onmouseout="hide('.arrow-3')">Continue Reading<img
-                        class="arrow arrow-3 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
+                <button onclick="toggleModal()" onmouseover="display('.arrow-3')" onmouseout="hide('.arrow-3')">Continue
+                    Reading<img class="arrow arrow-3 hide" src="./styles/imgs/green-arrow-right.jpg" alt="">
 
 
             </div>
@@ -85,12 +103,12 @@
         <div>
             <div class="logo">Blogin<span class="logo-dot">.</span></div>
             <div class="copyrights-container">
-            
 
-            <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at
-                <a href="Pixelhint.com">Pixelhint.com</a>
-            </p>
-        </div>
+
+                <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at
+                    <a href="Pixelhint.com">Pixelhint.com</a>
+                </p>
+            </div>
             <div class="social-btns-container">
                 <button class="btn-social facebook-logo"><img src="./styles/imgs/facebook-logo.jpg" alt=""></button>
                 <button class="btn-social twitter-logo"><img src="./styles/imgs/twitter-logo.jpg" alt=""></button>
@@ -117,17 +135,32 @@
             } else {
                 img.src = './styles/imgs/hamburger.png';
             }
-            // document.body.classList.add('menu-open');
-            // document.body.classList.remove('menu-open');
         }
 
-        function openMenu() {
-            document.body.classList.add('menu-open');
+        function toggleModal() {
+            if (document.body.contains('.menu-open')) {
+                return
+            }
+            document.querySelector('.main-modal').classList.toggle('hide')
+            document.body.classList.toggle('open-modal');
         }
 
-        function closeMenu() {
-
+        function toggleDropdown() {
+            document.querySelector('.drop-down').classList.toggle('hide');
         }
+
+        document.querySelector('.journal-li').addEventListener('mouseenter', toggleDropdown);
+        document.querySelector('.journal-li').addEventListener('mouseleave', toggleDropdown);
+
+        function toggleMenuMobile() {
+            if (window.innerWidth > 900) return;
+                toggleDropdown()
+                // document.querySelector('.journal-li').classList.toggle('no-margin')
+        }
+
+        // .no-margin
+
+
 
     </script>
 </body>

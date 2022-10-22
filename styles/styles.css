@@ -170,12 +170,6 @@ button:hover {
     margin-block-start: 3.5rem;
     box-shadow: 0px 2px 5px 0px black;
     transform: translateY(-100%);
-    /* menu shows when screen size is shrinked */
-<<<<<<< HEAD
-
-=======
-    transition: 0.5s ease-out;
->>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
     z-index: -1;
 }
 
@@ -243,14 +237,14 @@ li:hover>a {
 .card {
     display: flex;
     flex-direction: column;
-    padding: 10px;
-    margin-bottom: 80px;
+    margin: 20px 20px 80px 20px;
+    padding: 20px;
     gap: 43px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .card h2 {
-    font-size: 1.75em;
+    font-size: 1.35em;
     margin: 0;
     text-transform: uppercase;
     /* CR: how do i align h2 and image properly? */
@@ -389,10 +383,11 @@ body.menu-open .main-screen {
         padding: 80px 0 0 0;
     }
 
-    body.open-modal .main-screen {
-        cursor: pointer;
-        opacity: 1;
-        pointer-events: auto;
+    body.open-modal .main-screen,
+    body.menu-open .main-screen {
+        cursor: none;
+        opacity: 0;
+        pointer-events: none;
 
     }
 
@@ -406,7 +401,7 @@ body.menu-open .main-screen {
     .header {
         position: static;
         background-color: #292929;
-        z-index: 2;
+        z-index: 1;
 
     }
 
@@ -435,7 +430,11 @@ body.menu-open .main-screen {
         background-color: transparent;
         width: auto;
         box-shadow: none;
+    }
+
+    body.menu-open .nav {
         transition: none;
+
     }
 
     .nav li {
@@ -468,11 +467,8 @@ body.menu-open .main-screen {
     }
 
     li:hover {
-<<<<<<< HEAD
         box-shadow: inset 0 -6px 0 var(--light-green);
-=======
-        box-shadow: -1px 0 0 #1d1d1d ,inset 0 -6px 0 var(--light-green);
->>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
+        box-shadow: -1px 0 0 #1d1d1d, inset 0 -6px 0 var(--light-green);
         border-bottom: none;
     }
 
@@ -481,29 +477,25 @@ body.menu-open .main-screen {
         gap: 43px;
         box-shadow: none;
         padding: 0;
+        margin: 0 0 80px 0;
+    }
+
+    .card h2 {
+        font-size: 1.75em;
     }
 
     .card-img {
         max-width: 400px;
         height: auto;
-<<<<<<< HEAD
-
     }
 
-  
-=======
-        
-    }
- 
->>>>>>> a3b2c9e51252790e525900e0470a0193539c0381
-}
+    /* large */
+    @media (min-width: 1100px) {
 
-/* large */
-@media (min-width: 1100px) {
-
-    .card-img {
-        max-width: 468px;
-        height: 307px;
+        .card-img {
+            max-width: 468px;
+            height: 307px;
+        }
     }
 }
 

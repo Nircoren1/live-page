@@ -12,15 +12,18 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo flex align-center">Blogin<span class="logo-dot">.</span></div>
+            <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
+            <button class="btn-hamburger" onclick="onMenuBtn()"><img src="./styles/imgs/hamburger.png" alt=""></button>
+
             <ul class="nav">
-                <!-- add link to li? -->
                 <li><a href="#">Journal</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
+
         </div>
+
     </header>
     <main class="main-section">
         <div class="card">
@@ -100,6 +103,28 @@
         function hide(el) {
             document.querySelector(el).classList.add('hide')
         }
+
+        function onMenuBtn() {
+            const classList = document.body.classList
+            const img = document.querySelector('.btn-hamburger img')
+            classList.toggle('menu-open');
+            if (classList.contains('menu-open')) {
+                img.src = './styles/imgs/x-icon.png';
+            } else {
+                img.src = './styles/imgs/hamburger.png';
+            }
+            // document.body.classList.add('menu-open');
+            // document.body.classList.remove('menu-open');
+        }
+
+        function openMenu() {
+            document.body.classList.add('menu-open');
+        }
+
+        function closeMenu() {
+
+        }
+
     </script>
 </body>
 

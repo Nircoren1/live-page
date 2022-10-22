@@ -12,9 +12,8 @@
 <body>
     <header class="header">
         <div class="header-content">
-            <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
-            <button class="btn-hamburger" onclick="onMenuBtn()"><img src="./styles/imgs/hamburger.png" alt=""></button>
-
+                <div class="logo header-logo flex align-center">Blogin<span class="logo-dot">.</span></div>
+                <button class="btn-hamburger" onclick="toggleMenu()"><img src="./styles/imgs/hamburger.png" alt=""></button>
             <ul class="nav">
                 <li><a href="#">Journal</a></li>
                 <li><a href="#">About</a></li>
@@ -26,6 +25,7 @@
 
     </header>
     <main class="main-section">
+        <div class="main-screen full" onclick="toggleMenu()"></div>
         <div class="card">
             <img class="card-img" src="./styles/imgs/001.jpg" alt="">
             <div class="card-content">
@@ -82,8 +82,11 @@
         </div>
     </main>
     <footer class="footer">
-        <div class="logo">Blogin<span class="logo-dot">.</span></div>
-        <div class="copyrights-container">
+        <div>
+            <div class="logo">Blogin<span class="logo-dot">.</span></div>
+            <div class="copyrights-container">
+            </div>
+
             <p> © 2014 Blogin.com - All Rights Reserved - Find more free Templates at
                 <a href="Pixelhint.com">Pixelhint.com</a>
             </p>
@@ -104,7 +107,7 @@
             document.querySelector(el).classList.add('hide')
         }
 
-        function onMenuBtn() {
+        function toggleMenu() {
             const classList = document.body.classList
             const img = document.querySelector('.btn-hamburger img')
             classList.toggle('menu-open');
